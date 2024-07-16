@@ -65,10 +65,10 @@ namespace Weapon_homework_16_07.Models
             }
             Console.WriteLine($"Weapon is already fully loaded. \n({Bullets.Count}/{BulletCapacity} bullets remaining.)");
         }
-       public void WeaponInfo()
+        public void WeaponInfo()
         {
             Console.WriteLine($"IdWeapon name: {ChosenWeaponName.ToString()}, Bullet type: {BulletTypeOfWeapon.ToString()}, Capacity: {BulletCapacity}");
         }
-        
+
     }
 }
