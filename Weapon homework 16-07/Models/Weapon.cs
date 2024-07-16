@@ -1,5 +1,16 @@
 ﻿using Weapon_homework_16_07.behindthestage;
 using Weapon_homework_16_07.Exceptions;
+public enum WeaponName
+{
+    M416,
+    AKM,
+    VSS,
+    UMP45,
+    AWM,
+    Crossbow,
+    M249,
+    M762,
+}
 
 namespace Weapon_homework_16_07.Models
 {
@@ -16,17 +27,6 @@ namespace Weapon_homework_16_07.Models
             BulletTypeOfWeapon = bulletTypeOfWeapon;
             BulletCapacity = bulletCapacity;
             Bullets = new Queue<Bullet>();
-        }
-        public enum WeaponName
-        {
-            M416,
-            AKM,
-            VSS,
-            UMP45,
-            AWM,
-            Crossbow,
-            M249,
-            M762,
         }
         public void Fire()
         {
@@ -67,7 +67,7 @@ namespace Weapon_homework_16_07.Models
         }
         public void WeaponInfo()
         {
-            Console.WriteLine($"IdWeapon name: {ChosenWeaponName.ToString()}, Bullet type: {BulletTypeOfWeapon.ToString()}, Capacity: {BulletCapacity}");
+            Console.WriteLine($"Id: {Id}, \tWeapon name: {ChosenWeaponName.ToString()}, \tBullet type: {BulletTypeOfWeapon.ToString()}, \tCapacity: {BulletCapacity}");
         }
 
     }
