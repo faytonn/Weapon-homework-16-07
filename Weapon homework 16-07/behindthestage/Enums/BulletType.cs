@@ -1,4 +1,4 @@
-﻿namespace Weapon_homework_16_07.behindthestage
+﻿namespace Weapon_homework_16_07.behindthestage.Enums
 {
     public enum BulletType
     {

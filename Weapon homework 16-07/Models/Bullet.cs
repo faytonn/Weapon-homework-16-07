@@ -1,4 +1,5 @@
 ﻿using Weapon_homework_16_07.behindthestage;
+using Weapon_homework_16_07.behindthestage.Enums;
 
 namespace Weapon_homework_16_07.Models
 {

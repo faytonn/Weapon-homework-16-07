@@ -1,16 +1,6 @@
 ﻿using Weapon_homework_16_07.behindthestage;
+using Weapon_homework_16_07.behindthestage.Enums;
 using Weapon_homework_16_07.Exceptions;
-public enum WeaponName
-{
-    M416,
-    AKM,
-    VSS,
-    UMP45,
-    AWM,
-    Crossbow,
-    M249,
-    M762,
-}
 
 namespace Weapon_homework_16_07.Models
 {
@@ -18,22 +8,22 @@ namespace Weapon_homework_16_07.Models
     {
         private static int _id;
         private Queue<Bullet> Bullets { get; set; }
-        public WeaponName ChosenWeaponName { get; set; }
-        public BulletType BulletTypeOfWeapon { get; set; }
+        public WeaponName WeaponName { get; set; }
+        public BulletType BulletType { get; set; }
         public int BulletCapacity { get; set; }
-        public Weapon(int bulletCapacity, BulletType bulletTypeOfWeapon)
+        public Weapon(int bulletCapacity, BulletType bulletType)
         {
             Id = ++_id;
-            BulletTypeOfWeapon = bulletTypeOfWeapon;
+            BulletType = bulletType;
             BulletCapacity = bulletCapacity;
             Bullets = new Queue<Bullet>();
-        }
+        }    
         public void Fire()
         {
             if (Bullets.Count > 0)
             {
                 var bullet = Bullets.Dequeue();
-                Console.WriteLine($"Action executed, \n{BulletTypeOfWeapon} bullet fired. Bullets remaining: {Bullets.Count}.");
+                Console.WriteLine($"Action executed, \n{BulletType} bullet fired. Bullets remaining: {Bullets.Count}.");
             }
             throw new NoBulletRemainingException("No bullets remaining!");
         }
@@ -67,7 +57,7 @@ namespace Weapon_homework_16_07.Models
         }
         public void WeaponInfo()
         {
-            Console.WriteLine($"Id: {Id}, \tWeapon name: {ChosenWeaponName.ToString()}, \tBullet type: {BulletTypeOfWeapon.ToString()}, \tCapacity: {BulletCapacity}");
+            Console.WriteLine($"Id: {Id}, \tWeapon name: {WeaponName.ToString()}, \tBullet type: {BulletType.ToString()}, \tCapacity: {BulletCapacity}");
         }
 
     }
